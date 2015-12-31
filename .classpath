@@ -6,6 +6,6 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="lib/fastjson-1.2.6.jar"/>
+	<classpathentry kind="lib" path="lib/fastjson-1.2.6.jar" sourcepath="D:/.m2/repository/com/alibaba/fastjson/1.2.6/fastjson-1.2.6-sources.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
