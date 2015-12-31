@@ -39,6 +39,7 @@ public class TestExtraProcessor {
 				"}" +
 				"]" +
 				"}";
+		// TODO 注意这里的ExtraProcessor实例在fastjson中的说明
 		ProcessorExport export = JSON.parseObject(json, ProcessorExport.class, new ExtraProcessor() {
 
 			@Override
@@ -49,13 +50,25 @@ public class TestExtraProcessor {
 				}
 			}
 		});
+		// 方案1：转换后获取数据过程
+		// for (ProcessorExportData info : export.contents) {
+		// OptionalVal optional = info.optionalVal;
+		// if (List.class.isAssignableFrom(optional.getType())) {
+		// List<ProcessorExportDataInfo> datas = optional.data();
+		// System.err.println(datas + "," + datas.size());
+		// } else {
+		// String data = optional.data(String.class);
+		// System.err.println(data);
+		// }
+		// }
+		// TODO 方案2：调用者自行转换
 		for (ProcessorExportData info : export.contents) {
-			OptionalVal optional = info.optionalVal;
-			if (List.class.isAssignableFrom(optional.getType())) {
-				List<ProcessorExportDataInfo> datas = optional.data();
+			Object object = info.data;
+			if (List.class.isAssignableFrom(object.getClass())) {
+				List<ProcessorExportDataInfo> datas = info.data();
 				System.err.println(datas + "," + datas.size());
 			} else {
-				String data = optional.data(String.class);
+				String data = info.data(String.class);
 				System.err.println(data);
 			}
 		}
