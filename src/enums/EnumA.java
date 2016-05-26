@@ -26,4 +26,8 @@ public enum EnumA implements IEnum {
 		return value;
 	}
 
+	public static void main(String[] args) {
+		System.err.println(EnumA.valueOf("A"));
+	}
+
 }

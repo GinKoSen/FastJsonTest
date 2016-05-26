@@ -28,9 +28,10 @@ public class EnumSerializer implements ObjectSerializer {
 			serializer.writeWithFieldName(object, fieldName);
 			return;
 		}
-		IEnum iEnum = (IEnum) object;
+		IEnum enuma = (IEnum) object;
 		Map<String, Object> map = new HashMap<>();
-		map.put(iEnum.key(), iEnum.value());
+		map.put("$name", enuma.name());
+		map.put(enuma.key(), enuma.value());
 		serializer.writeWithFieldName(map, fieldName);
 	}
 
