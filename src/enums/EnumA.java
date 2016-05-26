@@ -6,7 +6,9 @@ package enums;
  * @date 2016年5月26日 下午3:33:56
  */
 public enum EnumA implements IEnum {
-	A("a", 1), B("b", 2), C("c", 3);
+	A("a", 1),
+	B("b", 2),
+	C("c", 3);
 
 	private String key;
 	private int value;
