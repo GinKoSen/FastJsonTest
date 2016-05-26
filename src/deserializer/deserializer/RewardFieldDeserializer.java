@@ -50,7 +50,7 @@ public class RewardFieldDeserializer<T> extends FieldDeserializer {
 			t = callback.defaultValue();
 		}
 		if (object == null) {
-			fieldValues.put(fieldInfo.getName(), t);
+			fieldValues.put(fieldInfo.name, t);
 		} else {
 			setValue(object, t);
 		}

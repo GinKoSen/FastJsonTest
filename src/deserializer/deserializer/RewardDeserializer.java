@@ -9,9 +9,9 @@ import com.alibaba.fastjson.parser.JSONLexer;
 import com.alibaba.fastjson.parser.ParserConfig;
 import com.alibaba.fastjson.parser.deserializer.FieldDeserializer;
 import com.alibaba.fastjson.parser.deserializer.JavaBeanDeserializer;
-import com.alibaba.fastjson.util.DeserializeBeanInfo;
 
 import deserializer.vo.Reward;
+import util.DeserializeBeanInfo;
 
 /**
  * 
@@ -29,7 +29,7 @@ public class RewardDeserializer extends JavaBeanDeserializer {
 
 	public RewardDeserializer(ParserConfig config, Class<?> clazz) {
 		super(config, clazz);
-		DeserializeBeanInfo beanInfo = DeserializeBeanInfo.computeSetters(clazz, clazz);
+		DeserializeBeanInfo beanInfo = DeserializeBeanInfo.build(clazz, clazz);
 		feildDeserializerMap.put("reward",
 				new RewardFieldDeserializer<Double>(clazz, beanInfo.getField("reward"), new Callback<Double>() {
 					@Override
