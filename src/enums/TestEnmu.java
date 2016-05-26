@@ -1,6 +1,7 @@
 package enums;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.serializer.SerializeConfig;
 
 /**
  *
@@ -10,7 +11,8 @@ import com.alibaba.fastjson.JSON;
 public class TestEnmu {
 	public static void main(String[] args) {
 		BA ba = new BA();
-		ba.color = EnmuA.A;
+		ba.color = EnumA.A;
+		SerializeConfig.getGlobalInstance().put(EnumA.class, EnumObjectSerializer.instance);
 		System.err.println(JSON.toJSONString(ba));
 	}
 }
