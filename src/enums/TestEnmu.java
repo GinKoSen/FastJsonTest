@@ -12,7 +12,7 @@ public class TestEnmu {
 	public static void main(String[] args) {
 		BA ba = new BA();
 		ba.color = EnumA.A;
-		SerializeConfig.getGlobalInstance().put(EnumA.class, EnumObjectSerializer.instance);
+		SerializeConfig.getGlobalInstance().put(EnumA.class, EnumSerializer.instance);
 		System.err.println(JSON.toJSONString(ba));
 	}
 }

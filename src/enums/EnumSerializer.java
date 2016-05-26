@@ -13,9 +13,9 @@ import com.alibaba.fastjson.serializer.ObjectSerializer;
  * @author ginko.wang
  * @date 2016年5月26日 下午4:28:57
  */
-public class EnumObjectSerializer implements ObjectSerializer {
+public class EnumSerializer implements ObjectSerializer {
 
-	public static EnumObjectSerializer instance = new EnumObjectSerializer();
+	public static EnumSerializer instance = new EnumSerializer();
 
 	@Override
 	public void write(JSONSerializer serializer, Object object, Object fieldName, Type fieldType, int features)
