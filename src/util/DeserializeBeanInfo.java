@@ -14,7 +14,7 @@ public class DeserializeBeanInfo {
 	public JavaBeanInfo beanInfo;
 
 	private DeserializeBeanInfo(Class<?> clazz, Type type) {
-		this.beanInfo = JavaBeanInfo.build(clazz, type);
+		this.beanInfo = JavaBeanInfo.build(clazz, type, null);
 	}
 
 	public FieldInfo getField(String propertyName) {
